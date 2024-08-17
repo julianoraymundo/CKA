@@ -4,7 +4,6 @@ metadata:
   name: web-pod
   labels: 
     type: web-app
-  
 spec: 
   containers: 
     - name: web-server-apache
@@ -18,7 +17,7 @@ kind: Service
 metadata:
   name: frontend-service
 spec:
-  type: Cluster-IP
+  type: ClusterIP
   selector:
     type: web-app
   ports: 
