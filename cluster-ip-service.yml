@@ -17,7 +17,7 @@ kind: Service
 metadata:
   name: frontend-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     type: web-app
   ports: 
