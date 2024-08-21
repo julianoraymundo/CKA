@@ -1,27 +1,31 @@
 apiVersion: v1
 kind: Pod
-metadata:
+metadata: 
   name: web-pod
-  labels: 
+  labels:
     type: web-app
-spec: 
-  containers: 
+
+spec:
+  containers:
     - name: web-server-apache
       image: httpd
-      ports: 
-        - containerPort: 80
-
+      ports:
+         - containerPort: 80
+    - name: web-server-tomcat
+      image: tomcat
+      ports:
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
-metadata:
+metadata: 
   name: frontend-service
+
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     type: web-app
   ports: 
     - name: http
       port: 80
-      targetPort: 80
-      nodePort: 30008
+      targetPort: 8080
