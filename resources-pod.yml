@@ -13,3 +13,13 @@ spec:
       limits:
         cpu: "1000m"
         memory: "256Mi"
+
+  - name: redis
+    image: redis
+    resources:
+      requests:
+        cpu: "400m"
+        memory: "64Mi"
+      limits:
+        cpu: "500m"
+        memory: "128Mi"
