@@ -1,3 +1,7 @@
+# Aplicar os comandos abaixo para configurar a rede do cluster
+# kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/namespace.yaml
+# kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manifests/metallb.yaml
+
 apiVersion: v1
 kind: Namespace
 metadata: 
@@ -62,7 +66,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 9090
-      nodePort: 30080
   type: LoadBalancer
 
 ---
